@@ -24,6 +24,7 @@ export default class TextFileDiff extends EventEmitter {
      * @return Object         self
      */
     diff(file1: string, file2: string): Promise<this>;
+    diffplus(file1: string, encoding1: BufferEncoding, file2: string, encoding2: BufferEncoding): Promise<this>;
     /**
      * run diffStream
      * @param  Readable stream1

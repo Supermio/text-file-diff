@@ -67,6 +67,21 @@ export default class TextFileDiff extends EventEmitter {
     return this.diffStream(stream1, stream2);
   }
 
+  async diffplus(
+    file1: string,
+    encoding1: BufferEncoding,
+    file2: string,
+    encoding2: BufferEncoding) {
+    const stream1 = createReadStream(file1,
+      {
+        encoding: encoding1
+      });
+    const stream2 = createReadStream(file2,
+      {
+        encoding: encoding2
+      });
+    return this.diffStream(stream1, stream2);
+  }
   /**
    * run diffStream
    * @param  Readable stream1
